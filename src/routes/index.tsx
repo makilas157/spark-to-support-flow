@@ -152,6 +152,19 @@ function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-5 pb-20">
+        <Reveal>
+          <h2 className="text-center text-xl font-bold sm:text-2xl">
+            How we take an idea from spark to support
+          </h2>
+        </Reveal>
+        <Reveal delay={120}>
+          <div className="mt-8">
+            <ProcessStrip />
+          </div>
+        </Reveal>
+      </section>
+
       <section className="relative overflow-hidden border-y border-border bg-surface/40">
         <div className="grid-circuit pointer-events-none absolute inset-0 opacity-60" />
         <div className="relative mx-auto max-w-7xl px-5 py-20">
