@@ -212,3 +212,39 @@
     animation-play-state: paused;
   }
 }
+
+/* ---- Process strip (hex nodes + travelling pulse) ---- */
+.hex-node {
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  background:
+    linear-gradient(var(--background), var(--background)) padding-box,
+    var(--color-primary) border-box;
+  position: relative;
+}
+.hex-node::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  background: var(--color-primary);
+  opacity: 0.9;
+  z-index: -1;
+  margin: -1.5px;
+}
+
+@keyframes tvx-pulse-travel {
+  0% { left: -10%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+.process-pulse {
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  box-shadow: 0 0 12px 2px color-mix(in oklch, var(--color-primary) 60%, transparent);
+  animation: tvx-pulse-travel 3.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-pulse { animation: none; opacity: 0.6; }
+}
