@@ -80,7 +80,7 @@ function Services() {
         {!isLoading && !isError && services && services.length > 0 && (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => {
-              const Icon = iconMap[i % iconMap.length];
+              const Icon = iconMap[i % iconMap.length]!;
               const points =
                 Array.isArray(s.points) && s.points.length > 0 ? s.points : fallbackPoints;
               return (
