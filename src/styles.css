@@ -215,21 +215,21 @@
 
 /* ---- Process strip (hex nodes + travelling pulse) ---- */
 .hex-node {
-  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-  background:
-    linear-gradient(var(--background), var(--background)) padding-box,
-    var(--color-primary) border-box;
   position: relative;
+  clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0% 50%);
+  background: var(--color-primary);
+  filter: drop-shadow(0 0 6px color-mix(in oklch, var(--color-primary) 45%, transparent));
 }
 .hex-node::before {
   content: "";
   position: absolute;
-  inset: 0;
-  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-  background: var(--color-primary);
-  opacity: 0.9;
-  z-index: -1;
-  margin: -1.5px;
+  inset: 1.5px;
+  clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0% 50%);
+  background: var(--background);
+}
+.hex-node > * {
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes tvx-pulse-travel {
