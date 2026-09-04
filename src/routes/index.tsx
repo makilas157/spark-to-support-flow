@@ -68,15 +68,24 @@ function Home() {
     <>
       <section className="relative overflow-hidden">
         <img
-          src={hexBg}
+          src={heroPortal.url}
           alt=""
           aria-hidden="true"
           width={1920}
           height={1080}
-          className="absolute inset-0 size-full object-cover opacity-30"
+          className="absolute inset-0 size-full object-cover opacity-55 md:opacity-80"
+        />
+        {/* soft radial fade so the image melts into the page background */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(120% 90% at 62% 45%, transparent 0%, transparent 32%, var(--background) 78%)",
+          }}
         />
         <div className="grid-circuit pointer-events-none absolute inset-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/45 to-background md:via-transparent" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1 text-xs font-bold tracking-[0.2em] uppercase text-primary">
